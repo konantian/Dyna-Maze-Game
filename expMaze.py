@@ -24,7 +24,7 @@ def run(n):
 
     for i in range(maxEpisodes):
         rlglue.rl_episode()
-        print(rlglue.num_ep_steps())
+        print("Steps took in this episode was %d" %(rlglue.num_ep_steps()))
 
 def create_window():
 
