@@ -1,5 +1,5 @@
 # Dyna-Maze-Game
-Reinforcement learning Second edition Chapter8 Example 8.1 implementation
+## Reinforcement learning Second edition Chapter8 Example 8.1 implementation
 
 ## Problem Description
 Consider the simple maze shown inset in Figure 8.2. In
