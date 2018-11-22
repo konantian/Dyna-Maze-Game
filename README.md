@@ -1,8 +1,8 @@
 # Dyna-Maze-Game
 ## Reinforcement learning Second edition Chapter8 Example 8.1 implementation
-## [agentMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/agentMaze.py) This file is for learning and generate action under specific state
-## [envMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/envMaze.py) This is the environmnet for this problem, given an action under a state, return the next state
-## [expMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/expMaze.py) This is main file to run this project and has interaciton with RLGlue model and pygame to display the progress.
+[agentMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/agentMaze.py) This file is for learning and generate action under specific state<br />
+[envMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/envMaze.py) This is the environmnet for this problem, given an action under a state, return the next state<br />
+[expMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/expMaze.py) This is main file to run this project and has interaciton with RLGlue model and pygame to display the progress.
 
 Before start
 ------------
