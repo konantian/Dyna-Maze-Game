@@ -12,7 +12,7 @@ class Environment(BaseEnvironment):
     def __init__(self):
         """Declare environment variables."""
 
-    def env_init(self):
+    def env_init(self,maze):
         """
         Arguments: Nothing
         Returns: Nothing
@@ -20,6 +20,7 @@ class Environment(BaseEnvironment):
         """
         self.state=None
         self.wall=[]
+        self.update_wall(maze)
 
     def env_start(self,maze):
         """
@@ -27,10 +28,6 @@ class Environment(BaseEnvironment):
         Returns: state - numpy array
         Hint: Sample the starting state necessary for exploring starts and return.
         """
-        for row in range(len(maze)):
-            for col in range(len(maze[0])):
-                if maze[row][col] == 1:
-                    self.wall.append((row,col))
 
         self.state=(0,2)
         return self.state
@@ -63,3 +60,10 @@ class Environment(BaseEnvironment):
         """
         if in_message == "return":
             return self.state
+
+    def update_wall(self,maze):
+        self.wall=[]
+        for row in range(len(maze)):
+            for col in range(len(maze[0])):
+                if maze[row][col] == 1:
+                    self.wall.append((row,col))

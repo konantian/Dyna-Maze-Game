@@ -13,22 +13,11 @@ import sys
 def run(n):
 
     surface=create_window()
-    #Set the experiment
-    num_runs = 1
     maxEpisodes=50
     environment=Environment()
     agent=MazeAgent(n)
-    maze=[[0]*6 for n in range(9)]
-
-    maze[2][1]=1
-    maze[2][2]=1
-    maze[2][3]=1
-    maze[5][4]=1
-    maze[7][0]=1
-    maze[7][1]=1
-    maze[7][2]=1
-
-    rlglue=RLGlue(environment,agent,surface,maze)
+    
+    rlglue=RLGlue(environment,agent,surface)
     rlglue.rl_init()
     np.random.seed(0)
 

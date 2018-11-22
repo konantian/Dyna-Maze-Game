@@ -15,7 +15,7 @@ class RLGlue:
         agent_obj: an object that implements BaseAgent
     """
 
-    def __init__(self, env_obj, agent_obj,surface,maze):
+    def __init__(self, env_obj, agent_obj,surface):
         self._environment = env_obj
         self._agent = agent_obj
 
@@ -38,24 +38,22 @@ class RLGlue:
         self.wall_color=pygame.Color('gray')
         self.w=60
         self.margin=1
-        self.maze=maze
-        #self.maze=[[0]*6 for n in range(9)]
+        self.maze=[[0]*6 for n in range(9)]
         self.state=(0,2)
-
-    ######################
-    def addWall(self):
-        self.maze[2][1]=1
-        self.maze[2][2]=1
-        self.maze[2][3]=1
-        self.maze[5][4]=1
-        self.maze[7][0]=1
-        self.maze[7][1]=1
-        self.maze[7][2]=1
 
     def handle_event(self):
         event=pygame.event.poll()
         if event.type == pygame.QUIT:
             self.close_clicked=True
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
+            y=pos[0] // (self.w+self.margin)
+            x=pos[1] // (self.w+self.margin)
+            if self.maze[y][x] == 0:
+                self.maze[y][x]=1
+            elif self.maze[y][x] == 1:
+                self.maze[y][x]=0
+            self._environment.update_wall(self.maze)
 
     def drawGrid(self):
 
@@ -108,8 +106,7 @@ class RLGlue:
 
         # reset agent and environment
         self._agent.agent_init()
-        self._environment.env_init()
-        #self.addWall()
+        self._environment.env_init(self.maze)
 
     def rl_start(self):
         """
