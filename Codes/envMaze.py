@@ -19,16 +19,18 @@ class Environment(BaseEnvironment):
         Hint: Initialize environment variables necessary for run.
         """
         self.state=None
-        self.wall=set([(2,1),(2,2),(2,3),(5,4),(7,0),(7,1),(7,2)])
+        self.wall=[]
 
-    def env_start(self):
+    def env_start(self,maze):
         """
         Arguments: Nothing
         Returns: state - numpy array
         Hint: Sample the starting state necessary for exploring starts and return.
         """
-
-        #Set the start state
+        for row in range(len(maze)):
+            for col in range(len(maze[0])):
+                if maze[row][col] == 1:
+                    self.wall.append((row,col))
 
         self.state=(0,2)
         return self.state

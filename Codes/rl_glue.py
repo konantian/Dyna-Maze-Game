@@ -15,7 +15,7 @@ class RLGlue:
         agent_obj: an object that implements BaseAgent
     """
 
-    def __init__(self, env_obj, agent_obj,surface):
+    def __init__(self, env_obj, agent_obj,surface,maze):
         self._environment = env_obj
         self._agent = agent_obj
 
@@ -38,7 +38,8 @@ class RLGlue:
         self.wall_color=pygame.Color('gray')
         self.w=60
         self.margin=1
-        self.maze=[[0]*6 for n in range(9)]
+        self.maze=maze
+        #self.maze=[[0]*6 for n in range(9)]
         self.state=(0,2)
 
     ######################
@@ -108,7 +109,7 @@ class RLGlue:
         # reset agent and environment
         self._agent.agent_init()
         self._environment.env_init()
-        self.addWall()
+        #self.addWall()
 
     def rl_start(self):
         """
@@ -120,7 +121,7 @@ class RLGlue:
         self._num_ep_steps = 1
         self._num_steps = max(self._num_steps, 1)
 
-        state = self._environment.env_start()
+        state = self._environment.env_start(self.maze)
         self._last_action = self._agent.agent_start(state)
 
         return state, self._last_action

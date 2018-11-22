@@ -18,7 +18,17 @@ def run(n):
     maxEpisodes=50
     environment=Environment()
     agent=MazeAgent(n)
-    rlglue=RLGlue(environment,agent,surface)
+    maze=[[0]*6 for n in range(9)]
+
+    maze[2][1]=1
+    maze[2][2]=1
+    maze[2][3]=1
+    maze[5][4]=1
+    maze[7][0]=1
+    maze[7][1]=1
+    maze[7][2]=1
+
+    rlglue=RLGlue(environment,agent,surface,maze)
     rlglue.rl_init()
     np.random.seed(0)
 
