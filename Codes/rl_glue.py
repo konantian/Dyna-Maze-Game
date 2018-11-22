@@ -41,7 +41,7 @@ class RLGlue:
         self.maze=[[0]*6 for n in range(9)]
         self.state=(0,2)
 
-    #####################
+    ######################
     def addWall(self):
         self.maze[2][1]=1
         self.maze[2][2]=1
