@@ -40,11 +40,8 @@ class RLGlue:
         self.w=60
         self.margin=1
         self.maze=[[0]*6 for n in range(9)]
-        #self.start=(0,2)
-        #self.goal=(8,0)
         self.start=(np.random.randint(0,9),np.random.randint(0,6))
         self.goal=(np.random.randint(0,9),np.random.randint(0,6))
-        print(self.start,self.goal)
 
     def handle_event(self):
         event=pygame.event.poll()
@@ -72,7 +69,7 @@ class RLGlue:
                     pygame.draw.rect(self.surface,self.normal_color,grid)
         
 
-    def showChar(self,):
+    def showChar(self):
         pygame.font.init()
         myfont=pygame.font.SysFont('Comic Sans MS', 45)
         start = myfont.render('S', False, (0, 0, 0))
