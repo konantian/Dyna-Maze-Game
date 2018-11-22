@@ -19,17 +19,18 @@ class Environment(BaseEnvironment):
         Hint: Initialize environment variables necessary for run.
         """
         self.state=None
-        self.wall=[]
+        self.terminal=None
         self.update_wall(maze)
 
-    def env_start(self,maze):
+    def env_start(self,maze,start,goal):
         """
         Arguments: Nothing
         Returns: state - numpy array
         Hint: Sample the starting state necessary for exploring starts and return.
         """
 
-        self.state=(0,2)
+        self.state=start
+        self.terminal=goal
         return self.state
 
     def env_step(self, action):
@@ -47,7 +48,7 @@ class Environment(BaseEnvironment):
 
             self.state = testState
 
-            if self.state == (8, 0):
+            if self.state == self.terminal:
                 return 1,self.state,True
 
         return 0,self.state,False
@@ -62,8 +63,12 @@ class Environment(BaseEnvironment):
             return self.state
 
     def update_wall(self,maze):
-        self.wall=[]
+        self.wall=set([])
         for row in range(len(maze)):
             for col in range(len(maze[0])):
                 if maze[row][col] == 1:
-                    self.wall.append((row,col))
+                    self.wall.add((row,col))
+
+    def update_start_gola(self,start,goal):
+        self.state=start
+        self.terminal=goal

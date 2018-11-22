@@ -4,6 +4,7 @@
 """
 from abc import ABCMeta, abstractmethod
 import pygame
+import numpy as np
 
 class RLGlue:
     """
@@ -28,7 +29,7 @@ class RLGlue:
         # the most recent action taken by the agent
         self._last_action = None
 
-        #################
+        #################attributes of Game
         self.surface = surface
         self.bg_color = pygame.Color('black')
         self.pause_time = 0.04
@@ -39,7 +40,11 @@ class RLGlue:
         self.w=60
         self.margin=1
         self.maze=[[0]*6 for n in range(9)]
-        self.state=(0,2)
+        #self.start=(0,2)
+        #self.goal=(8,0)
+        self.start=(np.random.randint(0,9),np.random.randint(0,6))
+        self.goal=(np.random.randint(0,9),np.random.randint(0,6))
+        print(self.start,self.goal)
 
     def handle_event(self):
         event=pygame.event.poll()
@@ -67,14 +72,14 @@ class RLGlue:
                     pygame.draw.rect(self.surface,self.normal_color,grid)
         
 
-    def showChar(self):
+    def showChar(self,):
         pygame.font.init()
         myfont=pygame.font.SysFont('Comic Sans MS', 45)
         start = myfont.render('S', False, (0, 0, 0))
-        self.surface.blit(start,(15,120))
+        self.surface.blit(start,(self.start[0]*(self.w+self.margin)+15,self.start[1]*(self.w+self.margin)))
 
         goal = myfont.render('G', False, (0, 0, 0))
-        self.surface.blit(goal,(505,0))
+        self.surface.blit(goal,(self.goal[0]*(self.w+self.margin)+15,self.goal[1]*(self.w+self.margin)))
 
     def drawBlackBox(self,pos):
         x,y=pos
@@ -118,7 +123,7 @@ class RLGlue:
         self._num_ep_steps = 1
         self._num_steps = max(self._num_steps, 1)
 
-        state = self._environment.env_start(self.maze)
+        state = self._environment.env_start(self.maze,self.start,self.goal)
         self._last_action = self._agent.agent_start(state)
 
         return state, self._last_action
