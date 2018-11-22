@@ -42,6 +42,8 @@ class RLGlue:
         self.maze=[[0]*6 for n in range(9)]
         self.start=(np.random.randint(0,9),np.random.randint(0,6))
         self.goal=(np.random.randint(0,9),np.random.randint(0,6))
+        color_tags=[hex(0xffffff),hex(0xedffed),hex(0xdbffdb),hex(0xc9ffc9),hex(0xb7ffb7),hex(0xa5ffa5),hex(0x93ff93),hex(0x81ff81),hex(0x6fff6f),hex(0x5dff5d)]
+        self.color=dict(zip(list(range(10)),color_tags))
 
     def handle_event(self):
         event=pygame.event.poll()
@@ -66,9 +68,9 @@ class RLGlue:
                 if self.maze[row][col] == 1:
                     pygame.draw.rect(self.surface,self.wall_color,grid)
                 else:
-                    pygame.draw.rect(self.surface,self.normal_color,grid)
+                    value=(self._agent.calValue((row,col))*100)//10
+                    pygame.draw.rect(self.surface,pygame.Color(self.color[value]),grid)
         
-
     def showChar(self):
         pygame.font.init()
         myfont=pygame.font.SysFont('Comic Sans MS', 45)

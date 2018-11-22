@@ -87,7 +87,14 @@ class MazeAgent(BaseAgent):
         Returns: The value function as a list.
         This function is complete. You do not need to add code here.
         """
+        
         pass
+
+    def calValue(self,state):
+
+        x,y=state
+
+        return np.mean([self.Q[(x,y,a)] for a in self.actions])
 
     def _chooseAction(self,state):
 

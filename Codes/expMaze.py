@@ -13,7 +13,7 @@ import sys
 def run(n):
 
     surface=create_window()
-    maxEpisodes=50
+    maxEpisodes=200
     environment=Environment()
     agent=MazeAgent(n)
     
