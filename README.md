@@ -26,13 +26,13 @@ it is. Reward is zero on all transitions, except those into the goal state, on w
 After reaching the goal state (G), the agent returns to the start state (S) to begin a new
 episode. This is a discounted, episodic task with 
 ## The screenshot of running progress
-![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/DynaMaze.png)
+![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/Images/DynaMaze.png)
 
 ## The background algorithm from "Reinforcement learning Second edition"
-![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/Algorithm.png)
+![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/Images/Algorithm.png)
 
 ## The performance plot for n=0, 5 and 50
-![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/plot.png)
+![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/Images/plot.png)
 
 ## Compare between no-planning and planning
-![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/planning.png)
+![alt text](https://github.com/konantian/Dyna-Maze-Game/blob/master/Images/planning.png)
