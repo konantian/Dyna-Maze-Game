@@ -15,7 +15,7 @@ python3
 How to start
 ------------
 1. Clone this project: `git clone https://github.com/konantian/Dyna-Maze-Game.git`
-2. Enter the project: `cd Dyna-Maze-Game`
+2. Enter the project: `cd Dyna-Maze-Game/Codes`
 3. Start the game: `python3.6 expMaze.py 5 (5 is for n and you can modify this by yourself)`
 
 ## Problem Description
