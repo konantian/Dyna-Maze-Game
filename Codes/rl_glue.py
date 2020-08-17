@@ -75,10 +75,10 @@ class RLGlue:
         pygame.font.init()
         myfont=pygame.font.SysFont('Comic Sans MS', 45)
         start = myfont.render('S', False, (0, 0, 0))
-        self.surface.blit(start,(self.start[0]*(self.w+self.margin)+15,self.start[1]*(self.w+self.margin)))
+        self.surface.blit(start,(self.start[0]*(self.w+self.margin)+20,self.start[1]*(self.w+self.margin)+20))
 
         goal = myfont.render('G', False, (0, 0, 0))
-        self.surface.blit(goal,(self.goal[0]*(self.w+self.margin)+15,self.goal[1]*(self.w+self.margin)))
+        self.surface.blit(goal,(self.goal[0]*(self.w+self.margin)+20,self.goal[1]*(self.w+self.margin)+20))
 
     def drawBlackBox(self,pos):
         x,y=pos
