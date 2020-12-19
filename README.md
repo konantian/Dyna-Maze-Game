@@ -1,22 +1,38 @@
 # Dyna-Maze-Game
 ## Reinforcement learning Second edition Chapter8 Example 8.1 implementation
 [agentMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/agentMaze.py) This file is for learning and generate action under specific state<br />
+
 [envMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/envMaze.py) This is the environmnet for this problem, given an action under a state, return the next state<br />
+
 [expMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/expMaze.py) This is main file to run this project and has interaciton with RLGlue model and pygame to display the progress.
+
 [rl_glue.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/rl_glue.py) This is the file contains maze implementation by pygame and the Rlglue framework for Reinforcement learning.
 
-Before start
-------------
-```
-pygame
-python3
-```
+## Getting Started
+The following instructions will get you a copy of this project and you can run the project on your local machine or you can try the demo without any setup
 
 How to start
 ------------
 1. Clone this project: `git clone https://github.com/konantian/Dyna-Maze-Game.git`
 2. Enter the project: `cd Dyna-Maze-Game/Codes`
-3. Start the game: `python3 expMaze.py 5 (5 is for n and you can modify this by yourself)`
+3. Start the game: 
+```shell
+python3 expMaze.py 5 (5 is for n and you can modify this by yourself)
+```
+
+### Prerequisites
+You need to install the following software:
+
+* Python3
+
+* pygame
+
+### Installation
+> Install the package for python
+
+```shell
+$ pip install -r requirements.txt
+```
 
 ## Problem Description
  Consider the simple maze shown inset in Figure 8.2. In
