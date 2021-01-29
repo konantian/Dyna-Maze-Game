@@ -6,7 +6,7 @@
 
 [expMaze.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/expMaze.py) This is main file to run this project and has interaciton with RLGlue model and pygame to display the progress.
 
-[rl_glue.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/rl_glue.py) This is the file contains maze implementation by pygame and the Rlglue framework for Reinforcement learning.
+[rl_glue.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/rl_glue.py) This is the file contains maze implementation by pygame and the Rlglue framework for Reinforcement learning
 
 ## Getting Started
 The following instructions will get you a copy of this project and you can run the project on your local machine or you can try the demo without any setup
