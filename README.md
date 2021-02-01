@@ -9,7 +9,7 @@
 [rl_glue.py](https://github.com/konantian/Dyna-Maze-Game/blob/master/Codes/rl_glue.py) This is the file contains maze implementation by pygame and the Rlglue framework for Reinforcement learning
 
 ## Getting Started
-The following instructions will get you a copy of this project and you can run the project on your local machine or you can try the demo without any setup
+The following instructions will get you a copy of this project and you can run the project on your local machine.
 
 How to start
 ------------
